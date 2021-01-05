@@ -1,4 +1,4 @@
-import { Exclude } from "class-transformer";
+import { classToPlain, Exclude } from "class-transformer";
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -32,4 +32,8 @@ export class Cache extends BaseEntity {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  toJSON() {
+    return classToPlain(this);
+  }
 }

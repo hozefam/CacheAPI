@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 app.use("/api/cache", cacheRoute);
 
 app.get("/", (req: Request, res: Response) => {
-  res.json("Hello World");
+  res.send("Welcome to Cache service");
 });
 
 app.listen(process.env.PORT || 5000, () => {
